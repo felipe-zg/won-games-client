@@ -24,14 +24,14 @@ const WrapperModifiers = {
 }
 
 export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, lineLeft, lineBottom }) => css`
+  ${({ theme, color, lineLeft, lineBottom }) => css`
+    ${lineLeft && WrapperModifiers.lineLeft(theme)};
+    ${lineBottom && WrapperModifiers.lineBottom(theme)};
+    color: ${theme.colors[color!]};
     font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
-
-    ${lineLeft && WrapperModifiers.lineLeft(theme)}
-    ${lineBottom && WrapperModifiers.lineBottom(theme)}
   `}
 `

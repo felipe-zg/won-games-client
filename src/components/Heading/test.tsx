@@ -17,4 +17,11 @@ describe('<Heading />', () => {
       color: '#030517'
     })
   })
+
+  it('should render a blue line to the left side if lineLeft property is passed', () => {
+    renderWithTheme(<Heading lineLeft>Won Games</Heading>)
+    expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
+      'border-left': '0.7rem solid #3CD3C1'
+    })
+  })
 })

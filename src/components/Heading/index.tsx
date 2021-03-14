@@ -3,10 +3,17 @@ import * as S from './styles'
 export type HeadingProps = {
   children: React.ReactNode
   lineLeft?: boolean
+  lineBottom?: boolean
 }
 
-const Heading = ({ children, lineLeft = false }: HeadingProps) => (
-  <S.Wrapper lineLeft={lineLeft}>{children}</S.Wrapper>
+const Heading = ({
+  children,
+  lineLeft = false,
+  lineBottom = false
+}: HeadingProps) => (
+  <S.Wrapper lineLeft={lineLeft} lineBottom={lineBottom}>
+    {children}
+  </S.Wrapper>
 )
 
 export default Heading

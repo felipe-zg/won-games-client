@@ -29,4 +29,11 @@ describe('<Button />', () => {
       'font-size': '1.6rem'
     })
   })
+
+  it('should render a button with 100% width if fullWidth property is passed', () => {
+    renderWithTheme(<Button fullWidth>Buy Now</Button>)
+    expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
+      width: '100%'
+    })
+  })
 })
